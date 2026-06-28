@@ -49,6 +49,7 @@ export default function Footer() {
             <div className="footer-partner-divider" aria-hidden="true">&amp;</div>
             <a href="#" aria-label="Elevated Living Enterprise Limited" className="footer-partner-logo footer-partner-logo--elevated">
               <img src={elevatedLogo} alt="Elevated Living Enterprise Limited" />
+              <span>Elevated Living Enterprise Limited</span>
             </a>
           </div>
         </div>
