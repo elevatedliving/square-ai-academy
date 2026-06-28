@@ -27,7 +27,7 @@ export default function Nav() {
           <ul className="nav-links" role="list">
             <li><a href="#about">About</a></li>
             <li><a href="#courses">Courses</a></li>
-            <li><a href="#built-for-you" style={{ textAlign: "center", lineHeight: 1.3 }}>Built for<br />You</a></li>
+            <li><a href="#built-for-you">Built for You</a></li>
             <li><a href="#funding">Funding</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
