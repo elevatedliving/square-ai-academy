@@ -1,3 +1,6 @@
+import aosLogo from "@assets/AoS_logo_1782683794761.jpeg";
+import elevatedLogo from "@assets/Color_logo_-_no_background_1782683812201.png";
+
 export default function Footer() {
   return (
     <footer aria-label="Site footer">
@@ -16,6 +19,7 @@ export default function Footer() {
           <div>
             <span className="footer-col-title">Navigate</span>
             <ul className="footer-links">
+              <li><a href="#why-physical">Why Physical</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#courses">Courses</a></li>
               <li><a href="#built-for-you">Built for You</a></li>
@@ -34,12 +38,27 @@ export default function Footer() {
             </address>
           </div>
         </div>
+
+        <div className="footer-powered-by" aria-label="Powered by">
+          <span className="footer-powered-label">Powered by</span>
+          <div className="footer-powered-logos">
+            <a href="#" aria-label="Academy of Success CIC" className="footer-partner-logo">
+              <img src={aosLogo} alt="Academy of Success CIC" />
+              <span>Academy of Success CIC</span>
+            </a>
+            <div className="footer-partner-divider" aria-hidden="true">&amp;</div>
+            <a href="#" aria-label="Elevated Living Enterprise Limited" className="footer-partner-logo footer-partner-logo--elevated">
+              <img src={elevatedLogo} alt="Elevated Living Enterprise Limited" />
+            </a>
+          </div>
+        </div>
+
         <div className="footer-bottom">
           <p className="footer-legal">
             &copy; {new Date().getFullYear()} Square AI Academy. All rights reserved.{" "}
             <a href="#">Privacy Policy</a>
           </p>
-          <p className="footer-powered">
+          <p className="footer-aqa-note">
             Qualifications awarded through the AQA Unit Award Scheme. Not Ofqual-regulated.
           </p>
         </div>
