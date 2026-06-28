@@ -42,12 +42,12 @@ export default function Footer() {
         <div className="footer-powered-by" aria-label="Powered by">
           <span className="footer-powered-label">Powered by</span>
           <div className="footer-powered-logos">
-            <a href="#" aria-label="Academy of Success CIC" className="footer-partner-logo">
+            <a href="https://www.academyofsuccess.co.uk/" target="_blank" rel="noopener noreferrer" aria-label="Academy of Success CIC" className="footer-partner-logo">
               <img src={aosLogo} alt="Academy of Success CIC" />
               <span>Academy of Success CIC</span>
             </a>
             <div className="footer-partner-divider" aria-hidden="true">&amp;</div>
-            <a href="#" aria-label="Elevated Living Enterprise Limited" className="footer-partner-logo footer-partner-logo--elevated">
+            <a href="https://elevatedliving.uk/" target="_blank" rel="noopener noreferrer" aria-label="Elevated Living Enterprise Limited" className="footer-partner-logo footer-partner-logo--elevated">
               <img src={elevatedLogo} alt="Elevated Living Enterprise Limited" />
               <span>Elevated Living Enterprise Limited</span>
             </a>
