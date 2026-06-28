@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "@assets/SquareAI_Logo_Primary_Transparent_1782683364577.png";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,8 +21,8 @@ export default function Nav() {
     <>
       <nav id="nav" className={scrolled ? "scrolled" : ""} aria-label="Main navigation">
         <div className="nav-inner">
-          <a href="#" className="nav-logo-text" aria-label="Square AI Academy — home">
-            Square<span> AI</span> Academy
+          <a href="#" aria-label="Square AI Academy — home" style={{ display: "flex", alignItems: "center" }}>
+            <img src={logo} alt="Square AI Academy" style={{ height: "48px", width: "auto" }} />
           </a>
           <ul className="nav-links" role="list">
             <li><a href="#about">About</a></li>
