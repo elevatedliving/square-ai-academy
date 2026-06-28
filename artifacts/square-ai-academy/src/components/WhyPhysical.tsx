@@ -5,7 +5,7 @@ const blocks = [
   },
   {
     stat: "In the room",
-    body: "Confidence is built in rooms, not on screens. The moment someone sees someone like them doing something they thought was not for them — that is where change happens.",
+    body: "Confidence is built in rooms. That's why we're not an app. We're a place — and everyone in it is figuring it out together.",
   },
   {
     stat: "Woolwich, SE18",
