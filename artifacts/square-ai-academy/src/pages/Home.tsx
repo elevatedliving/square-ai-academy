@@ -23,6 +23,8 @@ export default function Home() {
       <main id="main">
         <Hero />
         <hr className="gold-rule" />
+        <WhyPhysical />
+        <hr className="gold-rule" />
         <About />
         <hr className="gold-rule" />
         <Courses />
@@ -30,8 +32,6 @@ export default function Home() {
         <BuiltForYou />
         <hr className="gold-rule" />
         <Funding />
-        <hr className="gold-rule" />
-        <WhyPhysical />
         <hr className="gold-rule" />
         <Contact />
       </main>
