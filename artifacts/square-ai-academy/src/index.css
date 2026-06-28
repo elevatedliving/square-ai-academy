@@ -295,6 +295,10 @@ footer { background: var(--aos-bg); border-top: 3px solid var(--gold); padding: 
   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .footer-powered { text-align: left; max-width: 100%; }
+  .footer-aqa-note { text-align: left; max-width: 100%; }
+  .footer-powered-by { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .footer-powered-logos { gap: 1rem; }
+  .footer-partner-logo { flex-wrap: wrap; }
   .square-letters { grid-template-columns: repeat(3, 1fr); }
   .square-letter { border-right: 1px solid rgba(196,158,88,0.4); border-bottom: 1px solid rgba(196,158,88,0.4); }
   .square-letter:nth-child(3n) { border-right: none; }
