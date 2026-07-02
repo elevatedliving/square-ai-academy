@@ -56,8 +56,6 @@ export default function Contact() {
               >
                 in
               </a>
-              <span className="social-link" aria-label="Instagram (coming soon)">ig</span>
-              <span className="social-link" aria-label="Facebook (coming soon)">fb</span>
             </div>
           </div>
           <div>
