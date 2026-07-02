@@ -46,8 +46,16 @@ export default function Contact() {
                 squareaiacademy.com
               </div>
             </div>
-            <div className="social-links" aria-label="Social media — coming soon">
-              <span className="social-link" aria-label="LinkedIn (coming soon)">in</span>
+            <div className="social-links" aria-label="Social media">
+              <a
+                className="social-link"
+                href="https://www.linkedin.com/groups/25340017/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                in
+              </a>
               <span className="social-link" aria-label="Instagram (coming soon)">ig</span>
               <span className="social-link" aria-label="Facebook (coming soon)">fb</span>
             </div>
