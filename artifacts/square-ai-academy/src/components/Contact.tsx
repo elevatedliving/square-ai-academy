@@ -114,7 +114,7 @@ export default function Contact() {
                   <option value="" disabled>Select your role</option>
                   <option>Community Member / Learner</option>
                   <option>Young Person (14–24)</option>
-                  <option>Entrepreneur / Self-employed</option>
+                  <option>Business Owner</option>
                   <option>Educator / Trainer</option>
                   <option>Employer / HR</option>
                   <option>Partner / Funder</option>
