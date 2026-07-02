@@ -75,7 +75,6 @@ export default function Contact() {
           <div>
             <form
               id="contact-form"
-              noValidate
               aria-label="Register interest form"
               onSubmit={handleSubmit}
             >
@@ -125,13 +124,11 @@ export default function Contact() {
                 </select>
               </div>
               <div className="form-group">
-                <label htmlFor="message">
-                  Message{" "}
-                  <span style={{ fontWeight: 400, color: "var(--taupe)" }}>(optional)</span>
-                </label>
+                <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
+                  required
                   value={formData.message}
                   onChange={handleChange}
                 />
