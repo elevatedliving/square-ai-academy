@@ -8,8 +8,6 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -19,27 +17,21 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
-    if (!formData.name || !formData.email || !formData.role) return;
 
-    setSubmitting(true);
     try {
-      const res = await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) {
-        throw new Error("Request failed");
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try again or email us directly at enquiry@squareaiacademy.com");
       }
-
-      setSubmitted(true);
-      setFormData({ name: "", email: "", role: "", message: "" });
     } catch {
-      setError("Something went wrong sending your message. Please try again or email us directly.");
-    } finally {
-      setSubmitting(false);
+      alert("Something went wrong. Please try again or email us directly at enquiry@squareaiacademy.com");
     }
   };
 
@@ -144,22 +136,12 @@ export default function Contact() {
                   onChange={handleChange}
                 />
               </div>
-              {error && (
-                <div
-                  role="alert"
-                  aria-live="polite"
-                  style={{ color: "#b3261e", fontSize: "0.875rem", marginBottom: "0.75rem" }}
-                >
-                  {error}
-                </div>
-              )}
               <button
                 type="submit"
                 className="btn btn--gold"
                 style={{ width: "100%", marginTop: "0.5rem" }}
-                disabled={submitting}
               >
-                {submitting ? "Sending…" : "Get in Touch"}
+                Get in Touch
               </button>
               <div
                 className={`form-success${submitted ? " visible" : ""}`}
