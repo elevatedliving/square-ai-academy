@@ -285,7 +285,7 @@ footer { background: var(--aos-bg); border-top: 3px solid var(--gold); padding: 
   .nav-cta { display: none; }
   .hero-stats { grid-template-columns: 1fr; gap: 0; }
   .hero-stat { border-right: none; border-bottom: 1px solid rgba(196,158,88,0.2); padding: 1.5rem 0; }
-  .hero-stat:last-child { border-bottom: none; }
+  .hero-stat:last-child { border-bottom: none; padding-left: 0; }
   .hero-stat:not(:first-child):not(:last-child) { padding-left: 0; }
   .courses-grid { grid-template-columns: 1fr; }
   .audience-grid { grid-template-columns: 1fr; }
