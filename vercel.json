@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter @workspace/square-ai-academy run build",
+  "outputDirectory": "artifacts/square-ai-academy/dist/public",
+  "installCommand": "pnpm install"
+}
