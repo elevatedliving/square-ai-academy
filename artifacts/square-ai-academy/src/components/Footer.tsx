@@ -60,7 +60,7 @@ export default function Footer() {
             <a href="#">Privacy Policy</a>
           </p>
           <p className="footer-aqa-note">
-            Qualifications awarded through the AQA Unit Award Scheme. Not Ofqual-regulated.
+            Qualifications awarded through the AQA Unit Award Scheme.
           </p>
         </div>
         <p className="footer-stamp">Learn Locally · Grow Globally · Woolwich, SE18</p>
