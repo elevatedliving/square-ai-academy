@@ -10,7 +10,7 @@ const panels = [
   {
     cls: "audience-panel--2",
     title: "For Entrepreneurs",
-    body: `You have built something. AI can take it further. Our Level 2 course is built specifically for business owners and self-employed people who want practical AI skills — not a lecture on theory.\n\nWe acknowledge your expertise. AI adds to it, not replaces it.`,
+    body: `You have built something. AI can take it further. Our course is built specifically for business owners and self-employed people who want practical AI skills — not a lecture on theory.\n\nWe acknowledge your expertise. AI adds to it, not replaces it.`,
     stat: "56% of UK employers rate their own AI knowledge as beginner or novice. Close that gap on your own terms.",
     link: "AI for Entrepreneurs →",
     linkTarget: "courses",
