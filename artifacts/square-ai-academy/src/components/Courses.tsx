@@ -27,11 +27,6 @@ const courses = [
 ];
 
 export default function Courses() {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="courses" className="section section--aos-bg" aria-label="Courses and qualifications">
       <div className="container">
@@ -50,13 +45,6 @@ export default function Courses() {
             >
               <h3 className="course-title">{course.title}</h3>
               <p className="course-desc">{course.desc}</p>
-              <button
-                className="course-link"
-                onClick={() => scrollTo("contact")}
-                style={{ background: "none", border: "none", padding: 0 }}
-              >
-                Find out more <span aria-hidden="true">→</span>
-              </button>
             </article>
           ))}
         </div>
