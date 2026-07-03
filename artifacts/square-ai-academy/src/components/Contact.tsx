@@ -44,35 +44,7 @@ export default function Contact() {
           Whether you are a learner, an employer, an educator or a partner — we
           want to hear from you.
         </p>
-        <div className="contact-grid">
-          <div>
-            <div className="contact-detail">
-              <div className="contact-item">
-                <strong>Email</strong>
-                [email address to be confirmed]
-              </div>
-              <div className="contact-item">
-                <strong>Location</strong>
-                Woolwich, SE18, South East London
-              </div>
-              <div className="contact-item">
-                <strong>Website</strong>
-                squareaiacademy.com
-              </div>
-            </div>
-            <div className="social-links" aria-label="Social media">
-              <a
-                className="social-link"
-                href="https://www.linkedin.com/groups/25340017/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                in
-              </a>
-            </div>
-          </div>
-          <div>
+        <div className="contact-form-wrap">
             <form
               id="contact-form"
               aria-label="Register interest form"
@@ -148,7 +120,6 @@ export default function Contact() {
                 ✓ Thank you — we will be in touch soon.
               </div>
             </form>
-          </div>
         </div>
       </div>
     </section>
