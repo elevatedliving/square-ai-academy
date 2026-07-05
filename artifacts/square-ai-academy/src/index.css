@@ -220,10 +220,6 @@ h1, h2, h3, h4 {
 .physical-block { padding: 2rem; background: #fff; border-top: 2px solid var(--gold); }
 .physical-stat { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.625rem; color: var(--gold-dark); margin-bottom: 0.75rem; }
 .physical-body { font-size: 0.9375rem; color: var(--mid-brown); line-height: 1.75; }
-.location-block { margin-top: 2.5rem; padding: 1.5rem 2rem; background: var(--gold-light); border-left: 4px solid var(--gold); display: flex; align-items: center; gap: 1rem; }
-.location-icon { font-size: 1.375rem; line-height: 1; }
-.location-text { font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 0.9375rem; color: var(--dark-brown); }
-.location-text span { display: block; font-weight: 400; color: var(--mid-brown); font-size: 0.8125rem; margin-top: 0.2rem; }
 
 /* CONTACT */
 .contact-heading { font-size: clamp(1.875rem, 3.5vw, 2.75rem); margin-bottom: 1rem; }

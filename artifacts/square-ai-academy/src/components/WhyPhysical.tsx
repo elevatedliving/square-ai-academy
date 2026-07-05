@@ -29,15 +29,6 @@ export default function WhyPhysical() {
             </div>
           ))}
         </div>
-        <div className="location-block" aria-label="Our location">
-          <div className="location-icon" aria-hidden="true">📍</div>
-          <div>
-            <div className="location-text">
-              Woolwich, SE18, South East London
-              <span>squareaiacademy.com</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
