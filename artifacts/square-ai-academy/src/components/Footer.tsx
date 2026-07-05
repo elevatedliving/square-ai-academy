@@ -1,5 +1,6 @@
 import aosLogo from "@assets/AoS_logo_1782683794761.jpeg";
 import elevatedLogo from "@assets/Color_logo_-_no_background_1782683812201.png";
+import squareLogo from "@assets/SquareAI_Logo_Primary_Transparent_v5_1782827954510.png";
 
 export default function Footer() {
   return (
@@ -7,9 +8,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
           <div>
-            <div className="footer-logo-text">
-              Square<span> AI</span> Academy
-            </div>
+            <img src={squareLogo} alt="Square AI Academy" className="footer-logo-img" />
             <p className="footer-tagline">
               South East London's first physical AI learning hub.
               <br />
