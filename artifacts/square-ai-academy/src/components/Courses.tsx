@@ -1,3 +1,22 @@
+import { useEffect } from "react";
+
+declare global {
+  interface Window {
+    EBWidgets?: {
+      createWidget: (opts: {
+        widgetType: string;
+        eventId: string;
+        modal: boolean;
+        modalTriggerElementId: string;
+        onOrderComplete?: () => void;
+      }) => void;
+    };
+  }
+}
+
+const EVENT_ID = "1993267333251";
+const TRIGGER_ID = `eventbrite-widget-modal-trigger-${EVENT_ID}`;
+
 const courses = [
   {
     title: "AI Awareness",
@@ -21,22 +40,61 @@ const courses = [
   },
   {
     title: "AI for Entrepreneurs",
-    desc: "Apply AI to grow your business. Designed for founders and the self-employed who want practical AI skills — not a lecture on theory. Not a course for beginners starting from zero.",
+    desc: "Apply AI to grow your business. Designed for founders and the self-employed who want practical AI skills — not a lecture on theory.",
     full: true,
   },
 ];
 
 export default function Courses() {
+  useEffect(() => {
+    const existingScript = document.querySelector(
+      'script[src*="eb_widgets"]'
+    );
+
+    const initWidget = () => {
+      window.EBWidgets?.createWidget({
+        widgetType: "checkout",
+        eventId: EVENT_ID,
+        modal: true,
+        modalTriggerElementId: TRIGGER_ID,
+        onOrderComplete: () => {
+          console.log("Order complete!");
+        },
+      });
+    };
+
+    if (window.EBWidgets) {
+      initWidget();
+      return;
+    }
+
+    if (existingScript) {
+      existingScript.addEventListener("load", initWidget);
+      return () => existingScript.removeEventListener("load", initWidget);
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://www.eventbrite.co.uk/static/widgets/eb_widgets.js";
+    script.async = true;
+    script.onload = initWidget;
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
   return (
-    <section id="courses" className="section section--aos-bg" aria-label="Courses and qualifications">
+    <section id="courses" className="section section--aos-bg" aria-label="Events and courses">
       <div className="container">
-        <span className="section-label">Courses</span>
+        <span className="section-label">Events &amp; Courses</span>
         <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", marginBottom: "1.25rem" }}>
           AI skills you can evidence.
         </h2>
         <p className="courses-intro">
           All courses are delivered in person at our Woolwich hub.
         </p>
+
         <div className="courses-grid">
           {courses.map((course) => (
             <article
@@ -47,6 +105,24 @@ export default function Courses() {
               <p className="course-desc">{course.desc}</p>
             </article>
           ))}
+        </div>
+
+        <div className="eventbrite-block">
+          <p className="eventbrite-intro">
+            Our next event is <strong>AI Coffee Club — AI Basics for Absolute Beginners</strong>. Join us in person for a relaxed, hands-on session.
+          </p>
+          <noscript>
+            <a
+              href={`https://www.eventbrite.co.uk/e/ai-coffee-club-ai-basics-for-absolute-beginners-in-person-tickets-${EVENT_ID}`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Buy Tickets on Eventbrite
+            </a>
+          </noscript>
+          <button id={TRIGGER_ID} className="btn btn--dark" type="button">
+            Book your place
+          </button>
         </div>
       </div>
     </section>

@@ -26,7 +26,7 @@ export default function Nav() {
           </a>
           <ul className="nav-links" role="list">
             <li><a href="#about">About</a></li>
-            <li><a href="#courses">Courses</a></li>
+            <li><a href="#courses">Events &amp; Courses</a></li>
             <li><a href="#built-for-you">Built for You</a></li>
             <li><a href="#funding">Funding</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -56,7 +56,7 @@ export default function Nav() {
         aria-label="Mobile navigation"
       >
         <a href="#about" onClick={() => scrollTo("about")}>About</a>
-        <a href="#courses" onClick={() => scrollTo("courses")}>Courses</a>
+        <a href="#courses" onClick={() => scrollTo("courses")}>Events &amp; Courses</a>
         <a href="#built-for-you" onClick={() => scrollTo("built-for-you")}>Built for You</a>
         <a href="#funding" onClick={() => scrollTo("funding")}>Funding</a>
         <a href="#contact" onClick={() => scrollTo("contact")}>Contact</a>

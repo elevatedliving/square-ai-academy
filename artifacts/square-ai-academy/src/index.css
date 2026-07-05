@@ -174,6 +174,11 @@ h1, h2, h3, h4 {
 .course-card { background: var(--cream); padding: 1.75rem; border-top: 3px solid var(--gold); transition: border-top-color var(--transition), border-top-width var(--transition); }
 .course-card:hover { border-top-width: 5px; border-top-color: var(--teal); }
 .course-card--full { grid-column: 1 / -1; }
+
+.eventbrite-block { margin-top: 3rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.eventbrite-intro { max-width: 600px; font-size: 1rem; line-height: 1.8; margin: 0; }
+.btn--dark { background: var(--dark-brown); color: var(--cream); border: none; padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background var(--transition), color var(--transition); border-radius: 0; }
+.btn--dark:hover { background: var(--teal); color: var(--cream); }
 .course-level { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.625rem; }
 .course-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.0625rem; color: var(--dark-brown); margin-bottom: 0.5rem; line-height: 1.3; }
 .course-desc { font-size: 0.875rem; color: var(--mid-brown); line-height: 1.65; margin-bottom: 1.25rem; }
