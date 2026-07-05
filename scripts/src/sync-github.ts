@@ -132,6 +132,18 @@ async function main() {
     }
     run(`git remote add ${remoteName} "${remoteUrl}"`);
 
+    // Fetch the current remote state into a temporary tracking ref so that
+    // --force-with-lease has an up-to-date picture of the remote. Without this
+    // fetch, git uses stale remote-tracking refs and rejects the push with
+    // "stale info" even when the push would be safe.
+    const tmpRef = `refs/remotes/${remoteName}/main`;
+    console.log("[sync-github] Fetching remote state…");
+    try {
+      run(`git fetch ${remoteName} main:${tmpRef} 2>&1`);
+    } catch {
+      // If the remote is empty (fresh repo) there is nothing to fetch — proceed.
+    }
+
     console.log(
       `[sync-github] Pushing branch '${branch}' → github.com/${repo} (main)…`
     );
@@ -139,7 +151,7 @@ async function main() {
     let pushOutput = "";
     try {
       pushOutput = run(
-        `git push ${remoteName} ${branch}:main --force-with-lease 2>&1`
+        `git push ${remoteName} ${branch}:main --force-with-lease=main:${tmpRef} 2>&1`
       );
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
