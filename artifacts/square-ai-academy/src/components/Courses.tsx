@@ -114,6 +114,7 @@ export default function Courses() {
             className="eventbrite-image"
           />
           <div className="eventbrite-details">
+            <h3 className="eventbrite-heading">Our Next Event</h3>
             <p className="eventbrite-intro">
               Our next event: <strong>AI Coffee Club — AI Basics for Absolute Beginners</strong>. Join us in person for a relaxed, hands-on session in Woolwich.
             </p>
@@ -126,7 +127,7 @@ export default function Courses() {
                 Buy Tickets on Eventbrite
               </a>
             </noscript>
-            <button id={TRIGGER_ID} className="btn btn--dark" type="button">
+            <button id={TRIGGER_ID} className="btn btn--teal" type="button">
               Book your place
             </button>
           </div>

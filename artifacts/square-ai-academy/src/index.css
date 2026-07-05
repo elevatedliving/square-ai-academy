@@ -178,7 +178,10 @@ h1, h2, h3, h4 {
 .eventbrite-block { margin-top: 3rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); display: flex; flex-direction: row; align-items: center; gap: 2.5rem; }
 .eventbrite-image { width: 340px; flex-shrink: 0; object-fit: cover; aspect-ratio: 16/9; display: block; }
 .eventbrite-details { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.eventbrite-heading { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--dark-brown); margin: 0; }
 .eventbrite-intro { max-width: 520px; font-size: 1rem; line-height: 1.8; margin: 0; }
+.btn--teal { background: var(--teal); color: #fff; border: none; padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background var(--transition); border-radius: 0; }
+.btn--teal:hover { background: var(--dark-brown); color: var(--cream); }
 @media (max-width: 700px) { .eventbrite-block { flex-direction: column; } .eventbrite-image { width: 100%; } }
 .btn--dark { background: var(--dark-brown); color: var(--cream); border: none; padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background var(--transition), color var(--transition); border-radius: 0; }
 .btn--dark:hover { background: var(--teal); color: var(--cream); }
