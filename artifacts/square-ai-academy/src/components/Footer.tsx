@@ -31,10 +31,7 @@ export default function Footer() {
             <span className="footer-col-title">Find Us</span>
             <address className="footer-address" style={{ fontStyle: "normal" }}>
               Woolwich, SE18<br />
-              South East London<br />
-              <br />
-              squareaiacademy.com<br />
-              [email TBC]
+              South East London
             </address>
           </div>
         </div>

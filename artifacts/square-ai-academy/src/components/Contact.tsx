@@ -9,8 +9,16 @@ declare global {
 export default function Contact() {
   useEffect(() => {
     if (window.ml) {
-      window.ml("show", "Ure4fS", "click");
+      window.ml("account", "2491186");
+      return;
     }
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://assets.mailerlite.com/js/universal.js";
+    script.onload = () => {
+      window.ml!("account", "2491186");
+    };
+    document.body.appendChild(script);
   }, []);
 
   return (
