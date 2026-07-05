@@ -9,7 +9,7 @@ declare global {
 export default function Contact() {
   useEffect(() => {
     if (window.ml) {
-      window.ml("webforms", "load");
+      window.ml("show", "Ure4fS", "click");
     }
   }, []);
 

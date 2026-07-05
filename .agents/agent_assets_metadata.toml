@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Mawr9Flc-dtdck73x_rea"
+uri = "file://artifacts/square-ai-academy/public/hero-laptop.png"
+type = "image"
+title = "laptop ai foreground cosy"
