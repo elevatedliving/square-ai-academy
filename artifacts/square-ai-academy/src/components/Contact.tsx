@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 declare global {
   interface Window {
@@ -7,18 +7,32 @@ declare global {
 }
 
 export default function Contact() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (window.ml) {
-      window.ml("account", "2491186");
-      return;
-    }
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Inject the ml-embedded div fresh so MailerLite sees it when the script runs
+    container.innerHTML = '<div class="ml-embedded" data-form="Ure4fS"></div>';
+
+    // Remove any previous MailerLite script + state so it re-initialises cleanly
+    const existing = document.querySelector('script[src*="mailerlite"]');
+    if (existing) existing.remove();
+    delete window.ml;
+
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://assets.mailerlite.com/js/universal.js";
     script.onload = () => {
-      window.ml!("account", "2491186");
+      window.ml?.("account", "2491186");
     };
     document.body.appendChild(script);
+
+    return () => {
+      const s = document.querySelector('script[src*="mailerlite"]');
+      if (s) s.remove();
+    };
   }, []);
 
   return (
@@ -30,7 +44,7 @@ export default function Contact() {
           Whether you are a learner, an employer, an educator or a partner — we
           want to hear from you.
         </p>
-        <div className="ml-embedded" data-form="Ure4fS"></div>
+        <div ref={containerRef} />
       </div>
     </section>
   );
