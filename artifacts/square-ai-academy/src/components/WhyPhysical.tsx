@@ -9,7 +9,7 @@ const blocks = [
   },
   {
     stat: "Woolwich, SE18",
-    body: "We are not a platform. We are not an app. We are a place. You can walk through our door. Come and find us in South East London.",
+    body: "We are not a platform. We are a place. You can walk through our door. Come and find us in South East London.",
   },
 ];
 
