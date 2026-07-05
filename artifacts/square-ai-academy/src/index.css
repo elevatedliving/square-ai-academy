@@ -261,7 +261,7 @@ footer { background: var(--aos-bg); border-top: 3px solid var(--gold); padding: 
 .footer-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
 .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(196,158,88,0.3); }
 .footer-logo-text { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.0625rem; color: var(--dark-brown); margin-bottom: 0.75rem; }
-.footer-logo-text span { color: var(--gold); }
+.footer-logo-text span { color: var(--teal); }
 .footer-tagline { font-size: 0.8125rem; color: var(--taupe); margin-top: 0.5rem; line-height: 1.6; }
 .footer-col-title { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
