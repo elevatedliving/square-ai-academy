@@ -108,21 +108,28 @@ export default function Courses() {
         </div>
 
         <div className="eventbrite-block">
-          <p className="eventbrite-intro">
-            Our next event is <strong>AI Coffee Club — AI Basics for Absolute Beginners</strong>. Join us in person for a relaxed, hands-on session.
-          </p>
-          <noscript>
-            <a
-              href={`https://www.eventbrite.co.uk/e/ai-coffee-club-ai-basics-for-absolute-beginners-in-person-tickets-${EVENT_ID}`}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Buy Tickets on Eventbrite
-            </a>
-          </noscript>
-          <button id={TRIGGER_ID} className="btn btn--dark" type="button">
-            Book your place
-          </button>
+          <img
+            src="/ai-coffee-club-event.jpg"
+            alt="AI Coffee Club — AI Basics for Absolute Beginners"
+            className="eventbrite-image"
+          />
+          <div className="eventbrite-details">
+            <p className="eventbrite-intro">
+              Our next event: <strong>AI Coffee Club — AI Basics for Absolute Beginners</strong>. Join us in person for a relaxed, hands-on session in Woolwich.
+            </p>
+            <noscript>
+              <a
+                href={`https://www.eventbrite.co.uk/e/ai-coffee-club-ai-basics-for-absolute-beginners-in-person-tickets-${EVENT_ID}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Buy Tickets on Eventbrite
+              </a>
+            </noscript>
+            <button id={TRIGGER_ID} className="btn btn--dark" type="button">
+              Book your place
+            </button>
+          </div>
         </div>
       </div>
     </section>

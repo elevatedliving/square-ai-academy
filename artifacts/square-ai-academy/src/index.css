@@ -175,8 +175,11 @@ h1, h2, h3, h4 {
 .course-card:hover { border-top-width: 5px; border-top-color: var(--teal); }
 .course-card--full { grid-column: 1 / -1; }
 
-.eventbrite-block { margin-top: 3rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-.eventbrite-intro { max-width: 600px; font-size: 1rem; line-height: 1.8; margin: 0; }
+.eventbrite-block { margin-top: 3rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); display: flex; flex-direction: row; align-items: center; gap: 2.5rem; }
+.eventbrite-image { width: 340px; flex-shrink: 0; object-fit: cover; aspect-ratio: 16/9; display: block; }
+.eventbrite-details { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.eventbrite-intro { max-width: 520px; font-size: 1rem; line-height: 1.8; margin: 0; }
+@media (max-width: 700px) { .eventbrite-block { flex-direction: column; } .eventbrite-image { width: 100%; } }
 .btn--dark { background: var(--dark-brown); color: var(--cream); border: none; padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background var(--transition), color var(--transition); border-radius: 0; }
 .btn--dark:hover { background: var(--teal); color: var(--cream); }
 .course-level { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); margin-bottom: 0.625rem; }
