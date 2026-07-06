@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import NextEvent from "@/components/NextEvent";
 import About from "@/components/About";
 import Courses from "@/components/Courses";
 import BuiltForYou from "@/components/BuiltForYou";
@@ -22,6 +23,8 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
+        <hr className="gold-rule" />
+        <NextEvent />
         <hr className="gold-rule" />
         <WhyPhysical />
         <hr className="gold-rule" />
