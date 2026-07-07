@@ -176,7 +176,9 @@ h1, h2, h3, h4 {
 .course-card--full { grid-column: 1 / -1; }
 
 .eventbrite-heading { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--dark-brown); margin: 3rem 0 1.5rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); }
+.events-list { display: flex; flex-direction: column; gap: 3rem; }
 .eventbrite-block { display: flex; flex-direction: row; align-items: center; gap: 2.5rem; }
+.event-card-title { font-family: var(--font-head); font-size: 1.125rem; font-weight: 700; color: var(--dark-brown); margin: 0; line-height: 1.35; }
 .eventbrite-image { width: 340px; flex-shrink: 0; object-fit: cover; aspect-ratio: 16/9; display: block; }
 .eventbrite-details { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
 .eventbrite-intro { max-width: 520px; font-size: 1rem; line-height: 1.8; margin: 0; }
