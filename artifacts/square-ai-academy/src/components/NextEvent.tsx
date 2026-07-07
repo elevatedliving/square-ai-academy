@@ -25,7 +25,7 @@ const events = [
   {
     id: "1993448306547",
     title: "Getting Ahead with AI — Practical AI Skills for Beginners",
-    description: "6 Aug · 18:00 · Equitable House, Woolwich. Build practical AI skills you can use straight away.",
+    description: "A 4-week course starting 6 Aug · 18:00 · Equitable House, Woolwich. Build practical AI skills you can use straight away.",
     image: "/getting-ahead-with-ai-event.png",
     imageAlt: "Getting Ahead with AI event poster",
   },

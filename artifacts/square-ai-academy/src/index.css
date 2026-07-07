@@ -179,7 +179,7 @@ h1, h2, h3, h4 {
 .events-list { display: flex; flex-direction: column; gap: 3rem; }
 .eventbrite-block { display: flex; flex-direction: row; align-items: center; gap: 2.5rem; }
 .event-card-title { font-family: var(--font-head); font-size: 1.125rem; font-weight: 700; color: var(--dark-brown); margin: 0; line-height: 1.35; }
-.eventbrite-image { width: 300px; flex-shrink: 0; display: block; object-fit: contain; }
+.eventbrite-image { width: 180px; flex-shrink: 0; display: block; object-fit: contain; }
 .eventbrite-details { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
 .eventbrite-intro { max-width: 520px; font-size: 1rem; line-height: 1.8; margin: 0; }
 .btn--teal { background: var(--teal); color: #fff; border: none; padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: background var(--transition); border-radius: 0; }
