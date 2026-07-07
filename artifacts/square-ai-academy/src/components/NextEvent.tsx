@@ -18,7 +18,7 @@ const events = [
   {
     id: "1993267333251",
     title: "AI Coffee Club — AI Basics for Absolute Beginners",
-    description: "A relaxed, hands-on session for anyone curious about AI. No experience needed — just bring yourself.",
+    description: "A weekly, relaxed, hands-on session for anyone curious about AI. No experience needed — just bring yourself.",
     image: "/ai-coffee-club-event.jpg",
     imageAlt: "AI Coffee Club event poster",
   },
