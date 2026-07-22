@@ -26,15 +26,34 @@ function run(cmd: string, opts: { stdio?: "pipe" | "inherit" } = {}) {
     .trim();
 }
 
+const EXPIRY_WARNING_DAYS = 14;
+
+interface TokenValidationResult {
+  /** Non-null means the token is unusable; contains a human-readable reason. */
+  error: string | null;
+  /**
+   * Non-null when the token will expire within EXPIRY_WARNING_DAYS days.
+   * The string already contains the formatted warning message.
+   */
+  expiryWarning: string | null;
+}
+
 /**
  * Validate the token against the GitHub REST API before attempting a push.
- * Returns an error message if the token is invalid/expired, or null if OK.
+ * Also inspects the `github-authentication-token-expiration` response header
+ * and returns an expiry warning when fewer than EXPIRY_WARNING_DAYS days remain.
  */
-function validateToken(tok: string, repoPath: string): Promise<string | null> {
+function validateToken(
+  tok: string,
+  repoPath: string
+): Promise<TokenValidationResult> {
   return new Promise((resolve) => {
     const [owner, repoName] = repoPath.split("/");
     if (!owner || !repoName) {
-      resolve(`GITHUB_REPO must be in "owner/repo" format, got: "${repoPath}"`);
+      resolve({
+        error: `GITHUB_REPO must be in "owner/repo" format, got: "${repoPath}"`,
+        expiryWarning: null,
+      });
       return;
     }
 
@@ -51,37 +70,73 @@ function validateToken(tok: string, repoPath: string): Promise<string | null> {
     };
 
     const req = request(options, (res) => {
-      const { statusCode } = res;
+      const { statusCode, headers } = res;
       // Drain the body so the socket is released
       res.resume();
+
+      // --- Check expiry header (present for fine-grained PATs) ---
+      // Format: "2025-01-15 00:00:00 UTC"
+      let expiryWarning: string | null = null;
+      const expiryHeader = headers["github-authentication-token-expiration"];
+      if (expiryHeader && typeof expiryHeader === "string") {
+        const expiryDate = new Date(expiryHeader);
+        if (!isNaN(expiryDate.getTime())) {
+          const msRemaining = expiryDate.getTime() - Date.now();
+          const daysRemaining = Math.floor(msRemaining / (1000 * 60 * 60 * 24));
+          if (daysRemaining < 0) {
+            // Token is expired — the status check below will handle it, but
+            // add the expiry detail for extra context.
+            expiryWarning = `GITHUB_SYNC_TOKEN expired on ${expiryDate.toDateString()}.`;
+          } else if (daysRemaining < EXPIRY_WARNING_DAYS) {
+            expiryWarning =
+              `GITHUB_SYNC_TOKEN expires in ${daysRemaining} day${daysRemaining === 1 ? "" : "s"} ` +
+              `(${expiryDate.toDateString()}). ` +
+              "Please rotate it before it expires to keep GitHub sync working.";
+          }
+        }
+      }
+
+      // --- Check HTTP status ---
       if (statusCode === 200 || statusCode === 301) {
-        resolve(null); // token is valid
+        resolve({ error: null, expiryWarning });
       } else if (statusCode === 401) {
-        resolve(
-          "Token is invalid or expired (HTTP 401). " +
-          "Please rotate GITHUB_SYNC_TOKEN. " +
-          "Use a fine-grained PAT scoped to this repo with 'Contents: Read and write'."
-        );
+        resolve({
+          error:
+            "Token is invalid or expired (HTTP 401). " +
+            "Please rotate GITHUB_SYNC_TOKEN. " +
+            "Use a fine-grained PAT scoped to this repo with 'Contents: Read and write'.",
+          expiryWarning,
+        });
       } else if (statusCode === 403) {
-        resolve(
-          "Token lacks permission to access this repo (HTTP 403). " +
-          "Check that GITHUB_SYNC_TOKEN has write access to " + repoPath + ". " +
-          "Use a fine-grained PAT scoped to this repo with 'Contents: Read and write'."
-        );
+        resolve({
+          error:
+            "Token lacks permission to access this repo (HTTP 403). " +
+            "Check that GITHUB_SYNC_TOKEN has write access to " +
+            repoPath +
+            ". " +
+            "Use a fine-grained PAT scoped to this repo with 'Contents: Read and write'.",
+          expiryWarning,
+        });
       } else if (statusCode === 404) {
-        resolve(
-          `Repository "${repoPath}" not found (HTTP 404). ` +
-          "Verify GITHUB_REPO is correct and the token can access it."
-        );
+        resolve({
+          error:
+            `Repository "${repoPath}" not found (HTTP 404). ` +
+            "Verify GITHUB_REPO is correct and the token can access it.",
+          expiryWarning,
+        });
       } else {
-        resolve(
-          `GitHub API returned unexpected status ${statusCode} while validating token.`
-        );
+        resolve({
+          error: `GitHub API returned unexpected status ${statusCode} while validating token.`,
+          expiryWarning,
+        });
       }
     });
 
     req.on("error", (err) => {
-      resolve(`GitHub API request failed: ${err.message}`);
+      resolve({
+        error: `GitHub API request failed: ${err.message}`,
+        expiryWarning: null,
+      });
     });
 
     req.end();
@@ -110,7 +165,16 @@ const remoteName = "github-sync";
 async function main() {
   // --- Step 1: validate token before touching git ---
   console.log("[sync-github] Validating token against GitHub API…");
-  const tokenError = await validateToken(syncToken, syncRepo);
+  const { error: tokenError, expiryWarning } = await validateToken(
+    syncToken,
+    syncRepo
+  );
+
+  // Always surface an expiry warning — even when the push would succeed.
+  if (expiryWarning) {
+    console.warn(`[sync-github] ⚠ Token expiry warning: ${expiryWarning}`);
+  }
+
   if (tokenError) {
     console.error(`[sync-github] ✗ Token validation failed: ${tokenError}`);
     process.exit(1);
@@ -159,9 +223,9 @@ async function main() {
       if (isAuthError(combined)) {
         console.error(
           "[sync-github] ✗ Push failed due to authentication error.\n" +
-          "  GITHUB_SYNC_TOKEN may have expired or been revoked.\n" +
-          "  Please rotate GITHUB_SYNC_TOKEN in Replit Secrets.\n" +
-          "  Use a fine-grained PAT scoped to this repo with 'Contents: Read and write'."
+            "  GITHUB_SYNC_TOKEN may have expired or been revoked.\n" +
+            "  Please rotate GITHUB_SYNC_TOKEN in Replit Secrets.\n" +
+            "  Use a fine-grained PAT scoped to this repo with 'Contents: Read and write'."
         );
       } else {
         console.error("[sync-github] ✗ Push failed:", combined.trim());
