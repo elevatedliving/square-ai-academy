@@ -1,18 +1,4 @@
-import { useEffect } from "react";
-
-declare global {
-  interface Window {
-    EBWidgets?: {
-      createWidget: (opts: {
-        widgetType: string;
-        eventId: string;
-        modal: boolean;
-        modalTriggerElementId: string;
-        onOrderComplete?: () => void;
-      }) => void;
-    };
-  }
-}
+const ORGANISER_URL = "https://square-ai-academy.eventbrite.com";
 
 const events = [
   {
@@ -32,44 +18,6 @@ const events = [
 ];
 
 export default function NextEvent() {
-  useEffect(() => {
-    const existingScript = document.querySelector('script[src*="eb_widgets"]');
-
-    const initWidgets = () => {
-      events.forEach(({ id }) => {
-        window.EBWidgets?.createWidget({
-          widgetType: "checkout",
-          eventId: id,
-          modal: true,
-          modalTriggerElementId: `eventbrite-widget-modal-trigger-${id}`,
-          onOrderComplete: () => {
-            console.log("Order complete!");
-          },
-        });
-      });
-    };
-
-    if (window.EBWidgets) {
-      initWidgets();
-      return;
-    }
-
-    if (existingScript) {
-      existingScript.addEventListener("load", initWidgets);
-      return () => existingScript.removeEventListener("load", initWidgets);
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://www.eventbrite.co.uk/static/widgets/eb_widgets.js";
-    script.async = true;
-    script.onload = initWidgets;
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, []);
-
   return (
     <section id="next-event" className="section section--gold-light" aria-label="Upcoming events">
       <div className="container">
@@ -79,8 +27,8 @@ export default function NextEvent() {
         </h2>
 
         <div className="events-list">
-          {events.map(({ id, title, description, image, imageAlt }) => (
-            <div key={id} className="eventbrite-block">
+          {events.map(({ title, description, image, imageAlt }) => (
+            <div key={title} className="eventbrite-block">
               <img
                 src={image}
                 alt={imageAlt}
@@ -89,22 +37,14 @@ export default function NextEvent() {
               <div className="eventbrite-details">
                 <h3 className="event-card-title">{title}</h3>
                 <p className="eventbrite-intro">{description}</p>
-                <noscript>
-                  <a
-                    href={`https://www.eventbrite.co.uk/e/tickets-${id}`}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Buy Tickets on Eventbrite
-                  </a>
-                </noscript>
-                <button
-                  id={`eventbrite-widget-modal-trigger-${id}`}
+                <a
+                  href={ORGANISER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn--teal"
-                  type="button"
                 >
                   Book your place
-                </button>
+                </a>
               </div>
             </div>
           ))}
