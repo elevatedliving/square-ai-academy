@@ -9,4 +9,4 @@ else
   echo "[post-merge] DATABASE_URL not set — skipping DB push."
 fi
 
-pnpm --filter @workspace/scripts run sync-github
+# GitHub sync is run manually — not part of post-merge to avoid push conflicts.
