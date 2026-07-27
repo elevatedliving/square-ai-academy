@@ -177,6 +177,11 @@ h1, h2, h3, h4 {
 .course-card:hover { border-top-width: 5px; border-top-color: var(--teal); }
 .course-card--full { grid-column: 1 / -1; }
 
+.next-event-layout { display: flex; flex-direction: row; align-items: center; gap: 3rem; }
+.next-event-content { flex: 1; min-width: 0; }
+.next-event-image-wrap { flex: 0 0 42%; max-width: 42%; }
+.next-event-image { width: 100%; height: auto; display: block; border-radius: 4px; object-fit: cover; }
+@media (max-width: 860px) { .next-event-layout { flex-direction: column; gap: 2rem; } .next-event-image-wrap { flex: none; max-width: 100%; width: 100%; } }
 .eventbrite-heading { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--dark-brown); margin: 3rem 0 1.5rem; padding-top: 2.5rem; border-top: 2px solid var(--gold); }
 .events-list { display: flex; flex-direction: column; gap: 3rem; }
 .eventbrite-block { display: flex; flex-direction: row; align-items: center; gap: 2.5rem; }
