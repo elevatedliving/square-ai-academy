@@ -73,6 +73,8 @@ h1, h2, h3, h4 {
 .section--gold-light { background: var(--gold-light); }
 .section--community { background: var(--cream); }
 
+.announcement-banner { width: 100%; line-height: 0; }
+.announcement-banner__img { width: 100%; height: auto; display: block; }
 .gold-rule       { width: 100%; height: 1px; background: var(--gold); margin: 0; border: none; opacity: 0.5; }
 .gold-rule--short { width: 48px; height: 2px; background: var(--gold); border: none; margin: 1.5rem 0; display: block; }
 .gold-rule--thick { width: 100%; height: 3px; background: var(--gold); border: none; margin: 0; }
