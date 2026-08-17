@@ -13,10 +13,11 @@ export default function Hero() {
             AI belongs to <em>everyone.</em>
           </h1>
           <p className="hero-sub">
-            Square AI Academy is South East London's{" "}
-            <strong>first physical AI learning hub</strong>. Open to all — from
-            14 to 60+, from curious to confident. We are in Woolwich and our
-            doors are open.
+            Square AI Academy provides{" "}
+            <strong>AI teaching in person</strong>, making it easier to learn
+            if you're an absolute beginner. Open to all — from 14 to 60+, from
+            curious to confident. We deliver in various locations and can also
+            come to you!
           </p>
           <p className="hero-select-prompt">Who are you here for?</p>
           <div className="self-select" role="group" aria-label="Find your path">
