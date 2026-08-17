@@ -25,7 +25,7 @@ export default function Home() {
         <Hero />
         <hr className="gold-rule" />
         <NextEvent />
-        <hr className="gold-rule" />
+        <hr className="gold-rule--thick" />
         <div className="announcement-banner announcement-banner--portrait">
           <img src="/banner-come-to-you-v2.png" alt="Exciting news — Square AI Academy can come to you! Call 020 8153 4528 or email enquiry@squareaiacademy.com" className="announcement-banner__img" />
         </div>
