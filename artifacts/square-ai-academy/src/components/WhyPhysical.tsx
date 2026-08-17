@@ -1,7 +1,7 @@
 const blocks = [
   {
-    stat: "1.7M households",
-    body: "in the UK have no device at home. 1.6 million people have no internet. Online-only AI training excludes the people who need it most. We remove that barrier.",
+    stat: "1.6 million people",
+    body: "have no internet. Online-only AI training excludes the people who need it most. We remove that barrier by providing in person training in venues that have WiFi.",
   },
   {
     stat: "In the room",
@@ -17,7 +17,7 @@ export default function WhyPhysical() {
   return (
     <section id="why-physical" className="section section--aos-bg" aria-label="Why a physical hub">
       <div className="container">
-        <span className="section-label">Why Physical</span>
+        <span className="section-label">Why in person?</span>
         <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)" }}>
           Learning happens in a room.
         </h2>
