@@ -27,11 +27,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <span className="footer-col-title">Find Us</span>
-            <address className="footer-address" style={{ fontStyle: "normal" }}>
-              Woolwich, SE18<br />
-              South East London
-            </address>
+            <span className="footer-col-title">Follow Us</span>
             <a
               href="https://www.linkedin.com/company/squareai-academy/"
               target="_blank"
