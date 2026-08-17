@@ -62,6 +62,10 @@ export default function Footer() {
           </div>
         </div>
 
+        <p className="footer-ai-disclaimer">
+          Some content on this site is drafted with AI assistance and reviewed and edited by Elevated Living before publication. Marketing images are AI-generated.
+        </p>
+
         <div className="footer-bottom">
           <p className="footer-legal">
             &copy; {new Date().getFullYear()} Square AI Academy. All rights reserved.{" "}
