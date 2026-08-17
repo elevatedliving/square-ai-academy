@@ -75,6 +75,9 @@ h1, h2, h3, h4 {
 
 .announcement-banner { width: 100%; line-height: 0; }
 .announcement-banner__img { width: 100%; height: auto; display: block; }
+.announcement-banner--portrait { display: flex; justify-content: center; padding: 2.5rem 1rem; background: var(--cream); }
+.announcement-banner--portrait .announcement-banner__img { width: 100%; max-width: 480px; height: auto; display: block; }
+@media (max-width: 600px) { .announcement-banner--portrait .announcement-banner__img { max-width: 100%; } }
 .gold-rule       { width: 100%; height: 1px; background: var(--gold); margin: 0; border: none; opacity: 0.5; }
 .gold-rule--short { width: 48px; height: 2px; background: var(--gold); border: none; margin: 1.5rem 0; display: block; }
 .gold-rule--thick { width: 100%; height: 3px; background: var(--gold); border: none; margin: 0; }
