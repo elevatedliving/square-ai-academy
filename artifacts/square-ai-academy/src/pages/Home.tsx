@@ -6,6 +6,7 @@ import Courses from "@/components/Courses";
 import BuiltForYou from "@/components/BuiltForYou";
 import Funding from "@/components/Funding";
 import WhyPhysical from "@/components/WhyPhysical";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -29,6 +30,8 @@ export default function Home() {
         <div className="announcement-banner announcement-banner--portrait">
           <img src="/banner-come-to-you-v2.png" alt="Exciting news — Square AI Academy can come to you! Call 020 8153 4528 or email enquiry@squareaiacademy.com" className="announcement-banner__img" />
         </div>
+        <hr className="gold-rule" />
+        <Testimonials />
         <hr className="gold-rule" />
         <WhyPhysical />
         <hr className="gold-rule" />
