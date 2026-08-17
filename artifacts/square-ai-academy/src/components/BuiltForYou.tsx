@@ -2,7 +2,7 @@ const panels = [
   {
     cls: "audience-panel--1",
     title: "For Everyone in the Community",
-    body: `Square AI Academy is rooted in Woolwich and open to the whole community — whatever your age, background, or starting point. If you are curious about AI, you belong here.\n\nWe have a particular focus on young people aged 14–24, as well as adults returning to learning, people facing redundancy, and anyone who has been told that technology is not for them.`,
+    body: `Square AI Academy is open to the whole community — whatever your age, background, or starting point. If you are curious about AI, you belong here.\n\nWe have a particular focus on young people aged 14–24, as well as adults returning to learning, people facing redundancy, and anyone who has been told that technology is not for them.`,
     stat: "Over 1 million young people in the UK are missing out on the AI economy. Millions more adults face the same risk. We exist to change that.",
   },
   {
@@ -20,7 +20,7 @@ const panels = [
   {
     cls: "audience-panel--4",
     title: "For Employers",
-    body: `Give your team nationally recognised AI qualifications delivered at our Woolwich hub. We handle the learning. You get a more capable, more confident workforce.\n\nSimple process, no HR overhead. Talk to us about team enrolment.`,
+    body: `Give your team nationally recognised AI qualifications delivered in person. We handle the learning. You get a more capable, more confident workforce.\n\nSimple process, no HR overhead. Talk to us about team enrolment.`,
     stat: "AI-skill roles projected to grow from 158,000 to 3.9M by 2035. DSIT, 2026.",
   },
 ];

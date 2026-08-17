@@ -60,9 +60,6 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="location-callout" aria-label="Location">
-          <p>We are based in Woolwich, SE18, South East London. Our doors are open.</p>
-        </div>
       </div>
     </section>
   );

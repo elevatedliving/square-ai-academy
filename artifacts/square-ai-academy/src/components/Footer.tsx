@@ -80,7 +80,7 @@ export default function Footer() {
             Qualifications awarded through the AQA Unit Award Scheme.
           </p>
         </div>
-        <p className="footer-stamp">Learn Locally · Grow Globally · Woolwich, SE18</p>
+        <p className="footer-stamp">Learn Locally · Grow Globally</p>
       </div>
     </footer>
   );

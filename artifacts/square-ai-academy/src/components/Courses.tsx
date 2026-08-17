@@ -35,7 +35,7 @@ export default function Courses() {
           AI skills you can evidence.
         </h2>
         <p className="courses-intro">
-          All courses are delivered in person at our Woolwich hub.
+          All courses are delivered in person.
         </p>
         <div className="courses-grid">
           {courses.map((course) => (
