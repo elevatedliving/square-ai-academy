@@ -23,11 +23,11 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
+        <hr className="gold-rule" />
+        <NextEvent />
         <div className="announcement-banner">
           <img src="/banner-come-to-you.png" alt="Exciting news — Square AI Academy can come to you! Call 020 8153 4528 or email enquiry@squareaiacademy.com" className="announcement-banner__img" />
         </div>
-        <hr className="gold-rule" />
-        <NextEvent />
         <hr className="gold-rule" />
         <WhyPhysical />
         <hr className="gold-rule" />
