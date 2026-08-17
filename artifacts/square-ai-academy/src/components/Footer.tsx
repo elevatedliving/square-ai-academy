@@ -9,11 +9,6 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <img src={squareLogo} alt="Square AI Academy" className="footer-logo-img" />
-            <p className="footer-tagline">
-              South East London's first physical AI learning hub.
-              <br />
-              Open to all. Based in Woolwich, SE18.
-            </p>
           </div>
           <div>
             <span className="footer-col-title">Navigate</span>
