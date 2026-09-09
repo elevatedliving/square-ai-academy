@@ -8,7 +8,6 @@ export default function Hero() {
     <section id="hero" aria-label="Introduction">
       <div className="hero-inner">
         <div className="hero-content">
-          <p className="hero-eyebrow">AI Academy · South East London</p>
           <h1 className="hero-headline">
             AI belongs to <em>everyone.</em>
           </h1>
